@@ -3,22 +3,65 @@
 
 using namespace std;
 
+string whichNumberIsHigher(string firstNumber, string secondNumber)
+{
+    int i=0;
+    while(firstNumber[i]==secondNumber[i])
+    {
+        i+=1;
+    }
+
+    if(firstNumber[i]=='1')
+    {
+        return firstNumber;
+    }
+    return secondNumber;
+
+}
+
+string whichNumberIsLower(string firstNumber, string secondNumber)
+{
+    int i=0;
+    while(firstNumber[i]==secondNumber[i])
+    {
+        i+=1;
+    }
+
+    if(firstNumber[i]=='0')
+    {
+        return firstNumber;
+    }
+    return secondNumber;
+
+}
+
 string findTheHighestValue(string maxValue, string value)
 {
-    if(value.size() > maxValue.size()){
+    if(value.size() == maxValue.size())
+    {
+        return whichNumberIsHigher(maxValue, value);
+    }
+
+    else if(value.size() > maxValue.size())
+    {
         return value;
     }
+
     return maxValue;
 }
 
 string findTheLowestValue(string minValue, string value)
 {
-    if(value.size() < minValue.size()){
+    if(value.size() == minValue.size())
+    {
+        return whichNumberIsLower(minValue, value);
+    }
+    if(value.size() < minValue.size())
+    {
         return value;
     }
     return minValue;
 }
-
 
 int main()
 {
@@ -37,8 +80,7 @@ int main()
         }
         maxValue = findTheHighestValue(maxValue, binaryNumber);
         minValue = findTheLowestValue(minValue, binaryNumber);
-       // maxValue = [](string maxVal, string val) -> string{ return (val.size() > maxVal.size()) ? val : maxVal;}(maxValue, binaryNumber);
-        //minValue = [](string minVal, string val) -> string{ return (val.size() < minVal.size()) ? val : minVal;}(minValue, binaryNumber);
+
         if(minValue == binaryNumber)
         {
             minNumberIndex = i;
