@@ -1,0 +1,4 @@
+4.1 422 liczby
+4.2 500 podzielnych przez 2, 123 podzielne przez 8
+4.3 859 linia - liczba najmniejsza
+925 linia - liczba najwiêksza
